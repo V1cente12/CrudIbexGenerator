@@ -1,0 +1,20 @@
+//crear proyecto
+composer create_project laravel/laravel nombre
+
+//autenticacion
+composer require laravel/ui
+php artisan ui bootstrap --auth
+npm install && npm run dev
+
+//paquete crud ibex
+composer requiere ibex/crud-generator --dev
+php artisan vendor:publish --tag=crud
+
+//crud
+php artisan make:crud clientes
+php artisan make:crud pedidos
+
+//rutas
+Route::resource('clientes', App\Http\Controllers\ClienteController::class);
+
+Route::resource('pedidos', App\Http\Controllers\PedidoController::class);
